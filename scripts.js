@@ -29,3 +29,7 @@ function gridPrompt(){
     let playerPrompt = prompt("Enter grid size", " ");
     alert(playerPrompt);
 }
+
+function createNewGrid(num){
+    
+}
