@@ -1,6 +1,12 @@
+.game-content{
+    display: flex;
+    justify-content: center;
+}
+
 .grid-container {
     display: flex;
     flex-wrap: wrap;
+    width: 800px;
 }
 
 .grid-square {
