@@ -5,9 +5,12 @@
 
 .grid-square {
     flex: 1 1 5.75%;
-    /*
-    width: 100px;
-    height: 100px;
-    */
+    height: auto;
     border: 2px black solid;
+}
+
+.grid-square:before {
+    content: ' ';
+    display: block;
+    padding-top: 100%;
 }
