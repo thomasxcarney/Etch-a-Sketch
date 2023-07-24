@@ -14,3 +14,7 @@
     display: block;
     padding-top: 100%;
 }
+
+.hover{
+    background-color: red;
+}

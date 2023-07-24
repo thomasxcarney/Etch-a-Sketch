@@ -8,3 +8,17 @@ function createGrid(){
 }
 
 createGrid();
+
+
+function addHover(target){
+    target.classList.add('hover');
+};
+
+const squares = document.getElementsByClassName('grid-square');
+console.log(squares);
+for(let i=0; i<squares.length; i++) {
+    let currentSquare = squares[i];
+    currentSquare.addEventListener("mouseover", function() {
+        addHover(currentSquare);
+    });
+}
