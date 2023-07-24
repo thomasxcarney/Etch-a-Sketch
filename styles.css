@@ -1,3 +1,8 @@
+.grid-button{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 .game-content{
     display: flex;
     justify-content: center;
@@ -7,12 +12,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 800px;
+    border: 2px black solid;
 }
 
 .grid-square {
     flex: 1 1 5.75%;
     height: auto;
-    border: 2px black solid;
+    border: 1px black solid;
 }
 
 .grid-square:before {

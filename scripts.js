@@ -22,3 +22,10 @@ for(let i=0; i<squares.length; i++) {
         addHover(currentSquare);
     });
 }
+
+document.querySelector("#grid-button").addEventListener('click', gridPrompt);
+
+function gridPrompt(){
+    let playerPrompt = prompt("Enter grid size", " ");
+    alert(playerPrompt);
+}
