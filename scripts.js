@@ -1,13 +1,15 @@
 const gridContainer = document.querySelector('.grid-container');
-function createGrid(){
-    for(let i=0; i<256; i++){
+function createGrid(num){
+    for(let i=0; i<(num*num); i++){
         const square = document.createElement('div');
         square.classList.add('grid-square');
         gridContainer.appendChild(square);
+        square.style.setProperty('height', 'calc(800 / num)');
+        square.style.setProperty('width', 'calc(800 / num)');
     }
 }
 
-createGrid();
+createGrid(16);
 
 
 function addHover(target){
@@ -34,11 +36,12 @@ function gridPrompt(){
 function createNewGrid(num){
     if(num > 100){
         alert("That's too big!");
-/*    } else if(typeof(num) !== 'number') {
-        alert("Error"); */
+    } else if(isNaN(num)) {
+        alert("Error");
     } else {
         while(gridContainer.firstChild){
             gridContainer.removeChild(gridContainer.firstChild);
         };
+        createGrid(num);
     };
 }
