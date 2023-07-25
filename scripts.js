@@ -23,11 +23,18 @@ function addHover(target){
     target.classList.add('hover');
 };
 
+let clicked = false;
+
+document.querySelector("#randomize-colors").addEventListener('click', function() {
+    clicked = true;
+});
 function addHoverClass(){
     for(let i=0; i<squares.length; i++) {
         let currentSquare = squares[i];
         currentSquare.addEventListener("mouseover", function() {
-            addHover(currentSquare);
+            if(clicked){
+            currentSquare.style.backgroundColor = getRandomColor();
+            } else addHover(currentSquare);
         });
     };
 };
@@ -38,7 +45,7 @@ function gridPrompt(){
     let playerPrompt = prompt("Enter grid size");
     let num = (playerPrompt);
     createNewGrid(num);
-}
+};
 
 function createNewGrid(num){
     if(num > 100){
@@ -52,4 +59,10 @@ function createNewGrid(num){
         createGrid(num);
         addHoverClass();
     };
-}
+};
+
+const getRandomColor = () => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    const color = "#" + randomColor;
+    return color;
+  }
