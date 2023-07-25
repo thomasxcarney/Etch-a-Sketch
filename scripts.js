@@ -4,13 +4,19 @@ function createGrid(num){
         const square = document.createElement('div');
         square.classList.add('grid-square');
         gridContainer.appendChild(square);
-        square.style.setProperty('height', 'calc(800 / num)');
-        square.style.setProperty('width', 'calc(800 / num)');
+    /*    square.style.setProperty('height', 'calc(800 / num)');
+        square.style.setProperty('width', 'calc(800 / num)');*/
+        const dimensions = calculate(num);
+        square.style.height = dimensions;
+        square.style.width = dimensions;
     }
 }
 
 createGrid(16);
 
+function calculate(num){
+    return (800 / num) + 'px';
+};
 
 function addHover(target){
     target.classList.add('hover');
