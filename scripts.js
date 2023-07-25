@@ -1,5 +1,5 @@
+const gridContainer = document.querySelector('.grid-container');
 function createGrid(){
-    const gridContainer = document.querySelector('.grid-container');
     for(let i=0; i<256; i++){
         const square = document.createElement('div');
         square.classList.add('grid-square');
@@ -15,7 +15,7 @@ function addHover(target){
 };
 
 const squares = document.getElementsByClassName('grid-square');
-console.log(squares);
+
 for(let i=0; i<squares.length; i++) {
     let currentSquare = squares[i];
     currentSquare.addEventListener("mouseover", function() {
@@ -26,10 +26,19 @@ for(let i=0; i<squares.length; i++) {
 document.querySelector("#grid-button").addEventListener('click', gridPrompt);
 
 function gridPrompt(){
-    let playerPrompt = prompt("Enter grid size", " ");
-    alert(playerPrompt);
+    let playerPrompt = prompt("Enter grid size");
+    let num = (playerPrompt);
+    createNewGrid(num);
 }
 
 function createNewGrid(num){
-    
+    if(num > 100){
+        alert("That's too big!");
+/*    } else if(typeof(num) !== 'number') {
+        alert("Error"); */
+    } else {
+        while(gridContainer.firstChild){
+            gridContainer.removeChild(gridContainer.firstChild);
+        };
+    };
 }
