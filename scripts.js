@@ -28,6 +28,7 @@ let clicked = false;
 document.querySelector("#randomize-colors").addEventListener('click', function() {
     clicked = true;
 });
+
 function addHoverClass(){
     for(let i=0; i<squares.length; i++) {
         let currentSquare = squares[i];
