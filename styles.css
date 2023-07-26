@@ -62,4 +62,5 @@ button:hover{
 
 .hover{
     background-color: red;
+    filter: brightness(100%);
 }
